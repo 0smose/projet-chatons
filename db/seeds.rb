@@ -7,9 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+# ************************ We destroy our users and our items ************************  
+
 User.destroy_all
 Item.destroy_all
 
+# ---------------------------- We create our users and our items ---------------------------- #
 20.times do 
 
 	user = User.create!(
@@ -20,5 +23,5 @@ Item.destroy_all
 		title: Faker::Lorem.sentence,
 		description: Faker::Lorem.paragraph_by_chars(152, false),
 		price: rand(1..1000),
-		image_url: Faker::LoremFlickr.image("200x300"))
+		image_url: ["https://unsplash.com/photos/NodtnCsLdTE", "https://unsplash.com/photos/IbPxGLgJiMI", "https://unsplash.com/photos/O7ePLfRRlBs", "https://unsplash.com/photos/AL2-t0GrSko", "https://unsplash.com/photos/_yL3CxNwV4M", "https://pbs.twimg.com/media/DLk1g-CVwAAaIFh.jpg"].sample)
 end
