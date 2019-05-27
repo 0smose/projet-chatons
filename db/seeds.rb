@@ -23,5 +23,5 @@ Item.destroy_all
 		title: Faker::Lorem.sentence,
 		description: Faker::Lorem.paragraph_by_chars(152, false),
 		price: rand(1..1000),
-		image_url: ["https://unsplash.com/photos/NodtnCsLdTE", "https://unsplash.com/photos/IbPxGLgJiMI", "https://unsplash.com/photos/O7ePLfRRlBs", "https://unsplash.com/photos/AL2-t0GrSko", "https://unsplash.com/photos/_yL3CxNwV4M", "https://pbs.twimg.com/media/DLk1g-CVwAAaIFh.jpg"].sample)
+		image_url: ["https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1401&q=80", "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", "https://images.unsplash.com/photo-1466618786657-4df462be674e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", "https://images.unsplash.com/photo-1513780043732-614405263485?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", "https://images.unsplash.com/photo-1471874276752-65e2d717604a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", "https://pbs.twimg.com/media/DLk1g-CVwAAaIFh.jpg"].sample)
 end
