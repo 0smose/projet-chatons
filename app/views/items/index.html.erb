@@ -1,0 +1,35 @@
+<!-- JUMBOTRON -->
+<div class="jumbotron">
+	<h1 class="display-4">Good news everyone !</h1>
+	<p class="lead">Cat pictures everywhere !</p>
+	<hr class="my-4">
+	<p>You can buy some and receive it in your mailbox, yey!</p>
+</div>
+
+<!-- ITEMS LIST -->
+<div class="container">
+	<div class="row">
+		
+		<!-- Start of the items loop -->
+
+		
+
+		<% @items.each do |item| %>
+		<!-- For each item, we create a column and a card -->
+		<div class="col col-4">
+			<div class="card mb-3">
+				<!-- Item title -->
+				<h5 class="card-header"><%= item.title.truncate(30) %></h5>
+				<!-- Item image -->
+				<img class="card-img-top" height="200px" src="<%= item.image_url %>" alt="Card image cap">
+				<div class="card-body">
+					<!-- Item description -->
+					<p class="card-text"><%= item.description %></p>
+					<!-- Button to item -->
+					<%= link_to "See item", item_path(item.id), class:"btn btn-primary" %>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
