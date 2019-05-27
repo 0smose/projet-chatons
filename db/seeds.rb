@@ -7,9 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+# ************************ We destroy our users and our items ************************  
+
 User.destroy_all
 Item.destroy_all
 
+# ---------------------------- We create our users and our items ---------------------------- #
 20.times do 
 
 	user = User.create!(
