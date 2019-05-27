@@ -23,5 +23,5 @@ Item.destroy_all
 		title: Faker::Lorem.sentence,
 		description: Faker::Lorem.paragraph_by_chars(152, false),
 		price: rand(1..1000),
-		image_url: ["https://unsplash.com/photos/NodtnCsLdTE", "https://unsplash.com/photos/IbPxGLgJiMI", "https://unsplash.com/photos/O7ePLfRRlBs", "https://unsplash.com/photos/AL2-t0GrSko", "https://unsplash.com/photos/_yL3CxNwV4M", "https://images.ecosia.org/q4sawnP1MoScnUvWWFwGPfFgHAs=/0x390/smart/http%3A%2F%2Faz616578.vo.msecnd.net%2Ffiles%2F2016%2F05%2F19%2F635992707959380360-1327033223_08-grumpy-cat.w1200.h630.jpg"].sample
+		image_url: ["https://unsplash.com/photos/NodtnCsLdTE", "https://unsplash.com/photos/IbPxGLgJiMI", "https://unsplash.com/photos/O7ePLfRRlBs", "https://unsplash.com/photos/AL2-t0GrSko", "https://unsplash.com/photos/_yL3CxNwV4M", "https://pbs.twimg.com/media/DLk1g-CVwAAaIFh.jpg"].sample)
 end
