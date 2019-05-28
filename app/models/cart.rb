@@ -4,7 +4,6 @@ class Cart < ApplicationRecord
 	has_many :items, through: :cart_items
 
 	def total_cart_price
-		@cart = Cart.find(params[:id])
 		#We set a counter at 0
 		total = 0
 		#We iterate through the items in the cart
