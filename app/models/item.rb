@@ -6,7 +6,8 @@ class Item < ApplicationRecord
 	validates :price, presence: true, numericality: { greater_than: 0.0 }
 	validates :image_url, presence: true
 
-
-	has_many :carts
-	has_many :users, through: :carts
+	has_many :cart_items
+	has_many :carts, through: :cart_items
+	has_many :order_items
+	has_many :orders, through: :order_items
 end
