@@ -9,14 +9,31 @@
       <li class="nav-item active">
        <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pictures</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+      
+        <!-- Login / Logout -->
+        <% if user_signed_in? %>
+        <!-- Dropdown when logged in -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My profile
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+           <%= link_to "My profile", user_path(current_user.id), class: "dropdown-item" %>
+           <%= link_to "Log out", destroy_user_session_path , method: 'delete', class: "dropdown-item" %>
+         </div>
+       </li>
+       <% else %>
+       <!-- Dropdown when logged out -->
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sign up / Login
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
+         <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
+       </div>
+     </li>
+     <% end %>
       </li>
     </ul>
   </div>
