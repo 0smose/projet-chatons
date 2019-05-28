@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 2019_05_28_110339) do
 
   create_table "carts", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_carts_on_item_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
@@ -67,5 +69,4 @@ ActiveRecord::Schema.define(version: 2019_05_28_110339) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
 end
