@@ -5,4 +5,8 @@ class Item < ApplicationRecord
 	validates :description, presence: true, length: { in: 5..240 }
 	validates :price, presence: true, numericality: { greater_than: 0.0 }
 	validates :image_url, presence: true
+
+
+	has_many :carts
+	has_many :users, through: :carts
 end
