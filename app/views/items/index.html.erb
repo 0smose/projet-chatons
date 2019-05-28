@@ -26,7 +26,9 @@
 					<!-- Item description -->
 					<p class="card-text"><%= item.description %></p>
 					<!-- Button to item -->
-					<%= link_to "See item", item_path(item.id), class:"btn btn-primary" %>
+					<%= link_to "See item", item_path(item.id), class:"btn btn-primary btn-sm" %>
+					<!-- Add to cart button -->
+					<%= link_to "Add to cart", cart_items_path(item_id: item.id), method: "POST", class: "btn btn-primary btn-sm ml-1" %>
 				</div>
 			</div>
 		</div>

@@ -6,12 +6,15 @@ class CartItemsController < ApplicationController
 
 	def create
 		@item = Item.find(params[:item_id])
-		puts "*"*100
-		puts "Cart : #{current_user.cart}"
-		puts "Item : #{@item}"
-		puts "*"*100
+		@cart = current_user.cart
 
+		#Adding a new entry to CartItem
+		CartItem.create(cart_id: @cart.id, item_id: @item.id)
+
+		# Flash message
 		flash[:success]="Item successfully added to cart"
+
+		# Redirection to Root page
 		redirect_to root_path
 	end
 
