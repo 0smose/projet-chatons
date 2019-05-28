@@ -3,9 +3,14 @@ class Cart < ApplicationRecord
 	has_many :cart_items
 	has_many :items, through: :cart_items
 
+<<<<<<< HEAD
 #
 def total_cart_price
 	
+=======
+	def total_cart_price
+		@cart = Cart.find(params[:id])
+>>>>>>> development
 		#We set a counter at 0
 		total = 0
 		#We iterate through the items in the cart
@@ -14,6 +19,7 @@ def total_cart_price
 		#to obtain the total price
 		total+= item.price
 	end
+<<<<<<< HEAD
 	return total
 end
 
@@ -23,4 +29,6 @@ end
 
 
 
+=======
+>>>>>>> development
 end
