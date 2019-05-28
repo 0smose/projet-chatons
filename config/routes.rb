@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :static_pages, only: [:index, :secret]
-
+  resources :carts, only: [:new, :create, :update, :show]
   # We put the root page to the events index
   root to: 'items#index'
 

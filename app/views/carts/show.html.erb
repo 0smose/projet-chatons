@@ -1,0 +1,13 @@
+
+<ul class="list-group mt-4">
+	<% @cart.items.each do |item| %>
+  <li class="list-group-item border-top-0 text-center "> <%= item.title %>  <%= item.price %> € <button type="button" class="btn btn-sm btn-warning float-right">Remove item</button>
+</li> 
+
+
+  <% end %>
+</ul>
+<div class="mt-4">  <p class="text-center"> Total: <%= @cart.total_cart_price %> € <br>
+<button type="button" class="btn btn-lg btn-success mt-3">Buy Now</button></p>
+	</div>
+
