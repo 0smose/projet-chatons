@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :items
+  resources :carts, only: [:new, :create, :update, :show]
+  resources :orders, only: [:new, :create, :update, :show]
+  resources :cart_items
 end
