@@ -7,8 +7,10 @@
 		<li class="list-group-item"><%=@item.description %></li>
 		<li class="list-group-item"><%=@item.price %> €</li>
 	</ul>
-
+	
+	<% if user_signed_in? %>
 	<!-- Add to cart button -->
 	<%= link_to "Add to cart", cart_items_path(item_id: @item.id), method: "POST", class: "btn btn-primary btn-sm" %>
+	<% end %>
 
 </div>
