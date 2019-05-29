@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+	has_one_attached :image_url
 
 	# --------------- Items validates ------------------
 	validates :title, presence: true, length: { in: 5..50 }
