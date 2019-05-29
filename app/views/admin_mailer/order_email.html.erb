@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+	<h1><%= @order_user.email %> just made a new order!</h1>
+
+	<p>Here is what he bought:</p>
+	
+	<!-- We do a loop in order to display in the mail the title and the image -->
+	<% @cart_items_ordered.each do |item| %>
+	<h2>
+		<%= item.title %>
+	</h2>
+	<p>
+		<img src="<%= item.image_url%>" width="600" height="auto" alt="<%= item.title%> image">
+	</p>
+	<% end %>
+
+	<p>
+		Have a nice day and keep getting rich sending people image file you stole on the web!
+	</p>
+
+</body>
+</html>
