@@ -1,12 +1,21 @@
 
-<ul class="list-group mt-4">
+<div class="container">
+	<div class="row mt-4">
 	<% @cart.items.each do |item| %>
-	<li class="list-group-item border-top-0 text-center "> <%= item.title %>  <%= item.price %> € <%= link_to "Remove item", cart_item_path(:item_id => item.id), controller: 'cart_items', method: "delete", action: 'destroy', class: "btn btn-warning"%> 
-	</li> 
+		<div class="col col-6 mb-4 text-right"><%= item.title %> | <%= item.price %> € </div>
+		<div class="col col-6"><%= link_to "Remove item", cart_item_path(:item_id => item.id), controller: 'cart_items', method: "delete", action: 'destroy', class: "btn btn-warning btn-sm"%>  
+		</div> 
 	<% end %>
-</ul>
+
+	</div>
 <!-- finalize order button -->
+<div class="row">
+	<div class="col">
 <div class="mt-4">  <p class="text-center"> Total: <%= @cart.total_cart_price %> € <br>
 	<%= link_to "Buy now", new_charge_path(cart_id: @cart.id), class: "btn btn-lg btn-success mt-3" %>	 
 </div>
+</div>
+</div>
 
+
+</div>

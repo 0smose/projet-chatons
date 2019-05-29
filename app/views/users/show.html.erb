@@ -23,6 +23,7 @@
 	</div>
 </div>
 <div class="container">
+	<div class="h3 mb-2 border-bottom border-gray">My order history</div>
 	<div class="row">
 			<% current_user.orders.each do |order| %>
 		<div class="col col-4 mb-2">
@@ -31,7 +32,7 @@
 					<% order.items.each do |item| %>
 					<div class="media text-muted pt-3">
 						<%= image_tag item.image_url, class: 'mr-2 rounded W35' %>
-						<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+						<p class="media-body pb-3 mb-0 small border-bottom border-gray">
 							<strong class="d-block text-dark"><%= item.title %></strong>
 							<%= item.price.to_i %> €
 						</p>
