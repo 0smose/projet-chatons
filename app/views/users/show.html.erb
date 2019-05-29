@@ -11,8 +11,12 @@
 					<div class="col-md-8">
 						<div class="card-body">
 							<h5 class="card-title">My Profile</h5>
+							<% if @user.first_name != nil %> 
 							<p class="card-text"><%= @user.first_name %></p>
+							<% end %>
+							<% if @user.last_name != nil %> 
 							<p class="card-text"><%= @user.last_name.upcase %></p>
+							<% end %> 
 							<p class="card-text"><%= @user.email %></p>
 							<p class="card-text"><%= link_to "Edit your profile", edit_user_path, class: "btn btn-sm btn-primary" %></p>
 						</div>
@@ -25,6 +29,11 @@
 <div class="container">
 	<div class="h3 mb-2 border-bottom border-gray">My order history</div>
 	<div class="row">
+	<% if current_user.orders[0] == nil %> 
+		<div class="col col-4 mt-4">
+		 	<div class="p">You haven't ordered any items yet.</div>
+		</div>
+	<% else %> 
 			<% current_user.orders.each do |order| %>
 		<div class="col col-4 mb-2">
 			<div class="profil-box mt-3">
@@ -40,6 +49,7 @@
 				<% end %>
 			</div>
 		</div>
+		<% end %>	
 		<% end %>	
 	</div>
 </div>

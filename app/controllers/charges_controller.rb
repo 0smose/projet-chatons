@@ -39,7 +39,7 @@ class ChargesController < ApplicationController
 			entry.destroy
 		end
 
-		redirect_to root_path
+		redirect_to user_path(current_user.id)
 		flash[:success] = "Your order has been successful"
 
 		rescue Stripe::CardError => e
