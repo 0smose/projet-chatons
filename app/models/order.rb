@@ -4,7 +4,7 @@ class Order < ApplicationRecord
 	has_many :items, through: :order_items
 
 	# When an order si created, we call the method order_send
-	after_commit :order_send
+	after_create :order_send
 
 	# This method calls the order_email method from user_mailer, passing the order as an argument
 	def order_send

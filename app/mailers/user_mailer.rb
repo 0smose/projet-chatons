@@ -11,30 +11,16 @@ class UserMailer < ApplicationMailer
     #We get the user
     @user = @order.user
 
-
-    puts "*"*100
+    # We get the user's cart
     @cart = @user.cart
-    puts @cart
-    puts "*"*100
-
-    puts "*"*100
-    puts @cart.items[0]
-    puts "*"*100
-
-    puts "/"*100
-    @order_items = @order.items
-    puts @order_items
-    puts "/"*100
-
-    puts "/"*100
-    puts @order_items[0]
-    puts "/"*100
-
+    
+    # We get all the items from the cart
+    @cart_items_ordered = @cart.items
 
     #We define the website url
     @url  = 'http://chatons-project-production.herokuapp.com' 
 
     # We send an email to the user for every order
-    # mail(to: @user.email, subject: 'Thank you for your order!') 
+    mail(to: @user.email, subject: 'Thank you for your order!') 
 end
 end
