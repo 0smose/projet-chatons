@@ -1,8 +1,12 @@
 # The Chatons Project
+![grumpy cat](https://mm.aiircdn.com/165/5cdec41ec2cf1.jpg)
 
-**Pair programmers:** Carolina Ferreira, Lahouari Belabbes, Thomas Guilmin, Robin d'Ercole and François Loupias.  
+**Pair programmers:** Carolina Ferreira, Lahouari Belabbes, Thomas Guilmin, Robin d'Ercole et François Loupias.
 
-**Version en production:** 
+### ⚠️Infos stripe⚠️
+**Pour utiliser stripe veuillez rentrer ce numéro de carte bleue: "4242 4242 4242 4242", une date d'expiration dans le futur (merci Captain Obvious et un cryptogramme visuel de votre choix de trois chiffres 👍**
+
+**Version en production:** [https://chatons-project-production.herokuapp.com/](https://chatons-project-production.herokuapp.com/)
 
 ### Le pitch
 
