@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 </head>
 <body>
-  <h1>Hello <%= @user.email %> and thank you for your order !</h1>
-  <p>
-    You just checked out your order, thank you !
-  </p>
-  <p>
-    See you soon on <%= @url %> !
-  </p>
+	<h1>Hello <%= @user.email %> and thank you for your order !</h1>
+	<p>
+		You just checked out your order, thank you !
+	</p>
+	<p>Here is your order:</p>
+	
+	<h4>
+		<%= @order.items[0] %>
+	</h4>
+
+	<p>
+		See you soon on a <a href="<%=@url%>"><%=@url%></a> !
+	</p>
 </body>
 </html>
