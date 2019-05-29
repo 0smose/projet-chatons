@@ -40,6 +40,7 @@ class ChargesController < ApplicationController
 		end
 
 		redirect_to root_path
+		flash[:success] = "Your order has been successful"
 
 		rescue Stripe::CardError => e
 			flash[:error] = e.message
