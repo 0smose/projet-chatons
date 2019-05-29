@@ -1,4 +1,7 @@
 class Item < ApplicationRecord
+	# --------------- Friendly Id ---------------
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 
 	# --------------- Items validates ------------------
 	validates :title, presence: true, length: { in: 5..50 }
