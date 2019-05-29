@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 </head>
 <body>
-  <h1>Hello <%= @user.email %> and thank you for your order !</h1>
-  <p>
-    You just checked out your order, thank you !
-  </p>
-  <p>
-    See you soon on <%= @url %> !
-  </p>
+	<h1>Hello <%= @user.email %> and thank you for your order !</h1>
+	<p>
+		You just checked out your order, thank you !
+	</p>
+	<p>Here is your order:</p>
+	
+	<!-- We do a loop in order to display in the mail the title and the image -->
+	<% @cart_items_ordered.each do |item| %>
+	<h2>
+		<%= item.title %>
+	</h2>
+	<p>
+		<img src="<%= item.image_url%>" width="600" height="auto" alt="<%= item.title%> image">
+	</p>
+	<% end %>
+	<p>
+		See you soon on a <a href="<%=@url%>"><%=@url%></a> !
+	</p>
 </body>
 </html>

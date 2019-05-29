@@ -8,8 +8,6 @@ class Order < ApplicationRecord
 
 	# This method calls the order_email method from user_mailer, passing the order as an argument
 	def order_send
-		puts "*"*100
 		UserMailer.order_email(self).deliver_now
-		puts "*"*100
 	end
 end
