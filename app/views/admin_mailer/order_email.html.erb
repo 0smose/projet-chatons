@@ -4,11 +4,9 @@
 	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 </head>
 <body>
-	<h1>Hello <%= @user.email %> and thank you for your order !</h1>
-	<p>
-		You just checked out your order, thank you !
-	</p>
-	<p>Here is your order:</p>
+	<h1><%= @order_user.email %> just made a new order!</h1>
+
+	<p>Here is what he bought:</p>
 	
 	<!-- We do a loop in order to display in the mail the title and the image -->
 	<% @cart_items_ordered.each do |item| %>
@@ -19,8 +17,10 @@
 		<img src="<%= item.image_url%>" width="600" height="auto" alt="<%= item.title%> image">
 	</p>
 	<% end %>
+
 	<p>
-		See you soon on a <a href="<%=@url%>"><%=@url%></a> !
+		Have a nice day and keep getting rich sending people image file you stole on the web!
 	</p>
+
 </body>
 </html>
