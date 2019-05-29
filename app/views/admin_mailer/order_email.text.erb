@@ -1,17 +1,15 @@
-Hello <%= @user.email %> and thank you for your order !
+<%= @order_user.email %> just made a new order!
 ==========================================================
 
-You just checked out your order, thank you !
-
-Here is your order:
+Here is what he bought:
 
 <!-- We do a loop in order to display in the mail the title and the image -->
 <% @cart_items_ordered.each do |item| %>
 
 <%= item.title %>
 
-You can access your image at <%= item.image_url%>
+You can access the image at <%= item.image_url%>
 
 <% end %>
 
-See you soon on <%= @url %> !
+Have a nice day and keep getting rich sending people image file you stole on the web!
