@@ -18,7 +18,7 @@
         My profile
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-       <%= link_to "My profile", user_path(current_user.slug), class: "dropdown-item" %>
+       <%= link_to "My profile", user_path(current_user), class: "dropdown-item" %>
        <%= link_to "Log out", destroy_user_session_path , method: 'delete', class: "dropdown-item" %>
      </div>
    </li>
@@ -39,7 +39,7 @@
 <% if user_signed_in? %>
 <ul class="nav navbar-nav navbar-right">
   <li class="nav-link">
-    <%= link_to cart_path(id: current_user.cart.id), method: "get", class: "nav-link" do %>
+    <%= link_to cart_path(id: current_user.cart), method: "get", class: "nav-link" do %>
     <i class="fas fa-shopping-cart mr-1"></i>View cart (<%= current_user.cart.items.count %>)
     <% end %>
   </li>

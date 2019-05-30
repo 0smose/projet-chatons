@@ -23,7 +23,7 @@
 					<!-- Item description -->
 					<p class="card-text"><%= item.description %></p>
 					<!-- Button to item -->
-					<%= link_to "See item", item_path(item.slug), class: "btn btn-primary btn-sm" %>
+					<%= link_to "See item", item_path(item), class: "btn btn-primary btn-sm" %>
 					<% if user_signed_in? %>
 					<!-- Add to cart button -->
 					<%= link_to "Add to cart", cart_items_path(item_id: item.id), method: "POST", class: "btn btn-primary btn-sm ml-1" %>
