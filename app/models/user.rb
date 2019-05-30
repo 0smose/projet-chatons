@@ -1,12 +1,16 @@
 class User < ApplicationRecord
   # --------------- Friendly Id ---------------
+  attr_writer :login
   extend FriendlyId
-  friendly_id :email, use: :slugged
+  friendly_id :last_name, use: :slugged
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+    validates :first_name, presence: true
+    validates :last_name, presence: true
 
   has_one :cart    
   has_many :orders
@@ -19,4 +23,9 @@ class User < ApplicationRecord
   def assign_cart 
   	Cart.create(user_id: self.id)
   end 
+
+  def login
+    @login || self.first_name || self.last_name || self.email
+  end
+
 end
