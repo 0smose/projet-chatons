@@ -4,7 +4,13 @@
 **Pair programmers:** Carolina Ferreira, Lahouari Belabbes, Thomas Guilmin, Robin d'Ercole et François Loupias.
 
 ### ⚠️Infos stripe⚠️
-**Pour utiliser stripe veuillez rentrer ce numéro de carte bleue: "4242 4242 4242 4242", une date d'expiration dans le futur (merci Captain Obvious et un cryptogramme visuel de votre choix de trois chiffres 👍**
+**Pour utiliser stripe veuillez rentrer ce numéro de carte bleue: "4242 4242 4242 4242", une date d'expiration dans le futur (merci Captain Obvious) et un cryptogramme visuel de votre choix de trois chiffres (et surtout pas vos infos)**  
+
+**Pour tester le dashboard admin veuillez rentrer l'identifiant suivant:**
+* **Email:** johnneige@yopmail.com  
+* **Password:** dumdum
+
+👍
 
 **Version en production:** [https://chatons-project-production.herokuapp.com/](https://chatons-project-production.herokuapp.com/)
 

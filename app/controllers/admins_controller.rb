@@ -13,27 +13,24 @@ class AdminsController < ApplicationController
     # We stock the average money spent for every order in an array
     @price_per_order= [] 
 
-    @orders.each do |order|
-      # We put the initial order total price at 0
-      @this_order_total = 0
+    if @total_order_count > 0
+      @orders.each do |order|
+        # We put the initial order total price at 0
+        @this_order_total = 0
 
-        # We stock the total price of the order into our variable
-        order.items.each do |item|
-          @this_order_total += item.price
-        end
-        # We add the price of each order passed in our price_per_order_array
-        @price_per_order << @this_order_total
+          # We stock the total price of the order into our variable
+          order.items.each do |item|
+            @this_order_total += item.price
+          end
+            # We add the price of each order passed in our price_per_order_array
+            @price_per_order << @this_order_total
+          end
+
+      # We sum every price of the array and divide them by the number of orders
+      # to get the average money spent by order
+      @average_price = @price_per_order.sum / @price_per_order.count
     end
-
-    # We sum every price of the array and divide them by the number of orders
-    # to get the average money spent by order
-    @average_price = @price_per_order.sum / @price_per_order.count
-
-
-
   end
-
-
 
   def check_if_admin
     if current_user.is_admin == false
