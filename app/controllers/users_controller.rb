@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 	end
 
 	def dont_show
-		@user = User.find(params[:id])
+		@user = User.friendly.find(params[:id])
 		if @user != current_user
 			redirect_to root_path
 			flash[:alert] = "Condidential Information"
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		@user = User.find(params[:id])
+		@user = User.friendly.find(params[:id])
 		if current_user == @user
 			if @user.update(first_name: params[:first_name], last_name: params[:last_name])
 				redirect_to user_path 
