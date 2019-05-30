@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show]
   resources :carts, only: [:show, :update]
   resources :orders, only: [:create]
-  resources :cart_items, only: [:create, :destroy]
+  resources :cart_items, only: [:create, :update, :destroy]
   resources :charges, only: [:new, :create]
 
   # For the controller to be found, first declare the admins controller
