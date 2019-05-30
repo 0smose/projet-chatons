@@ -4,7 +4,13 @@ Rails.application.routes.draw do
   # We put the root page to the events index
   root to: 'items#index'
 
-  devise_for :users
+  devise_for :users, controllers: {
+        sessions: 'users/sessions',
+        registrations: 'users/registrations'
+      }
+    
+
+  # devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users do
     resources :profile_pictures, only:[:create]
@@ -15,3 +21,5 @@ Rails.application.routes.draw do
   resources :cart_items
   resources :charges
 end
+
+
