@@ -18,7 +18,7 @@
         My profile
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-       <%= link_to "My profile", user_path(current_user.slug), class: "dropdown-item" %>
+       <%= link_to "My profile", user_path(current_user), class: "dropdown-item" %>
        <%= link_to "Log out", destroy_user_session_path , method: 'delete', class: "dropdown-item" %>
      </div>
    </li>
