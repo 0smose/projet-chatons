@@ -33,15 +33,15 @@
        <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
      </div>
     </li>
-    <% if user_signed_in? %>
+ <% end %>
+</li>
+<% if user_signed_in? %>
       <% if current_user.is_admin == true %>
         <li class="nav-item">
-          <%= link_to "Dashboard", admins_root_path, class: "nav-item nav-link ml-3" %>
+          <%= link_to "Dashboard", admins_path, class: "nav-item nav-link" %>
         </li>
       <% end %>
     <% end %>
- <% end %>
-</li>
 </ul>
 <% if user_signed_in? %>
 <ul class="nav navbar-nav navbar-right">

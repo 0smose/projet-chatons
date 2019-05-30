@@ -15,10 +15,13 @@ Rails.application.routes.draw do
   resources :cart_items
   resources :charges
 
+  # For the controller to be found, first declare the admins controller
+  # before namespace declaration
+  resources :admins, only: [:index]
+
   # Admin dashboard
   namespace :admins do
-    root to: 'admins#index'
-   
+    root to: "admins#index"
     resources :users
     resources :items
   end
