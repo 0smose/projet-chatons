@@ -14,7 +14,7 @@
 
 				<div class="col col-3 text-right">
 					<%= link_to "-", cart_item_path(:item_id => item.id, :add_or_remove => "remove"), controller: 'cart_items', method: "put", action: 'update', class: "btn btn-sm btn-primary mr-1" %>
-						<%= CartItem.where(item_id: item.id).count %>
+						<%= CartItem.where(cart_id: @cart.id, item_id: item.id).count %>
 						<%= link_to "+", cart_item_path(:item_id => item.id, :add_or_remove => "add"), controller: 'cart_items', method: "put", action: 'update', class: "btn btn-sm btn-primary ml-1" %>
 
 					<%= link_to "Remove item", cart_item_path(:item_id => item.id), controller: 'cart_items', method: "delete", action: 'destroy', class: "btn btn-warning btn-sm ml-4"%>  
