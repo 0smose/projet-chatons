@@ -9,6 +9,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+    validates :first_name, presence: true
+    validates :last_name, presence: true
+
   has_one :cart    
   has_many :orders
   has_one_attached :profile_picture     
