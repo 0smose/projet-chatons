@@ -1,21 +1,41 @@
 
 <div class="container">
-	<div class="row mt-4">
-	<% @cart.items.each do |item| %>
-		<div class="col col-6 mb-4 text-right"><%= item.title %> | <%= item.price %> € </div>
-		<div class="col col-6"><%= link_to "Remove item", cart_item_path(:item_id => item.id), controller: 'cart_items', method: "delete", action: 'destroy', class: "btn btn-warning btn-sm"%>  
-		</div> 
-	<% end %>
 
+	<ul class="list-group list-group-flush mt-4">
+		<% @cart.items.each do |item| %>
+		<li class="list-group-item">
+			<div class="row align-items-center">
+				<div class="col col-1">
+					<%= image_tag item.image_url, class: 'mr-3 rounded W35' %>
+				</div> 
+				<div class="col col-8">
+					<h5 class="mt-0 mb-1"><%= item.title %> </h5>
+					<%= item.price %> € 
+				</div>
+				<div class="col col-3 text-right align-midlle">
+					<%= link_to "Remove item", cart_item_path(:item_id => item.id), controller: 'cart_items', method: "delete", action: 'destroy', class: "btn btn-warning btn-sm"%>  
+				</div> 
+			</div>
+		</li>
+		<% end %>
+	</ul>
+
+
+	<!-- finalize order button -->
+	<div class="row">
+		<div class="col">
+			<% if @cart.items.count == 0 %>
+				<div class="mt-4 text-center"> 
+					<p>Your cart is empty</p>
+					<%= link_to "Browse items", root_path, class: "btn btn-lg btn-success mt-3" %>	 
+				</div>
+			<% else%>
+				<div class="mt-4 text-center">  <p> Total: <%= @cart.total_cart_price %> € </p>
+					<%= link_to "Buy now", new_charge_path(cart_id: @cart.id), class: "btn btn-lg btn-success mt-3" %>	 
+				</div>
+			<%end%>
+		</div>
 	</div>
-<!-- finalize order button -->
-<div class="row">
-	<div class="col">
-<div class="mt-4">  <p class="text-center"> Total: <%= @cart.total_cart_price %> € <br>
-	<%= link_to "Buy now", new_charge_path(cart_id: @cart.id), class: "btn btn-lg btn-success mt-3" %>	 
-</div>
-</div>
-</div>
 
 
 </div>
