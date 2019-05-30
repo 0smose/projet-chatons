@@ -36,7 +36,8 @@ user = User.create!(
 		email: "johnneige@yopmail.com",
 		first_name: "John",
 		last_name: "Neige",
-		password: "dumdum")
+		password: "dumdum",
+		is_admin: true)
 
 puts "-----------------------------"
 puts "------- Admin created! ------"

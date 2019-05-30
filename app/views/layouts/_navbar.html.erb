@@ -25,14 +25,21 @@
    <% else %>
    <!-- Dropdown when logged out -->
    <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Sign up / Login
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-     <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
-     <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
-   </div>
- </li>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sign up / Login
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
+       <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
+     </div>
+    </li>
+    <% if user_signed_in? %>
+      <% if current_user.is_admin == true %>
+        <li class="nav-item">
+          <%= link_to "Dashboard", admins_root_path, class: "nav-item nav-link ml-3" %>
+        </li>
+      <% end %>
+    <% end %>
  <% end %>
 </li>
 </ul>

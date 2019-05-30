@@ -14,4 +14,12 @@ Rails.application.routes.draw do
   resources :orders, only: [:new, :create, :update, :show]
   resources :cart_items
   resources :charges
+
+  # Admin dashboard
+  namespace :admins do
+    root to: 'admins#index'
+   
+    resources :users
+    resources :items
+  end
 end
