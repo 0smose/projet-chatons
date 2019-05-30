@@ -37,7 +37,8 @@ class ApplicationController < ActionController::Base
   def logging_in
     # For example:
     guest_cart = guest_user.cart
-    # guest_items = guest_user.items
+  	current_user.cart = guest_cart 
+    # guest_comments = guest_user.comments.all
     # guest_comments.each do |comment|
       # comment.user_id = current_user.id
       # comment.save!
@@ -45,7 +46,7 @@ class ApplicationController < ActionController::Base
   end
 
   def create_guest_user
-    u = User.new(:name => "guest", :email => "guest_#{Time.now.to_i}#{rand(100)}@guest.com")
+    u = User.new(:first_name => "new", :last_name => "guest", :email => "guest_#{Time.now.to_i}#{rand(100)}@guest.com")
     u.save!(:validate => false)
     session[:guest_user_id] = u.id
     u

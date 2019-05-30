@@ -7,7 +7,7 @@ class CartItemsController < ApplicationController
 
 	def create
 		@item = Item.find(params[:item_id])
-		@cart = current_user.cart
+		@cart = current_or_guest_user.cart
 
 		#Adding a new entry to CartItem
 		CartItem.create(cart_id: @cart.id, item_id: @item.id)

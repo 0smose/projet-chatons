@@ -29,9 +29,13 @@
 					<p>Your cart is empty</p>
 					<%= link_to "Browse items", root_path, class: "btn btn-lg btn-success mt-3" %>	 
 				</div>
-			<% else%>
+			<% elsif user_signed_in?%>
 				<div class="mt-4 text-center">  <p> Total: <%= @cart.total_cart_price %> € </p>
 					<%= link_to "Buy now", new_charge_path(cart_id: @cart.id), class: "btn btn-lg btn-success mt-3" %>	 
+				</div>
+			<% else%>
+				<div class="mt-4 text-center">  <p> Total: <%= @cart.total_cart_price %> € </p>
+					<%= link_to "Please sign up", new_user_registration_path, class: "btn btn-lg btn-success mt-3" %>	 
 				</div>
 			<%end%>
 		</div>

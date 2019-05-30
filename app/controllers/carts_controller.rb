@@ -5,9 +5,6 @@ class CartsController < ApplicationController
 
 	def show
 		@cart = Cart.find(params[:id])
-		puts "*"*60
-		puts @cart.user
-		puts guest_user
 	end
 
 	def dont_show
