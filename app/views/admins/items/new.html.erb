@@ -1,0 +1,36 @@
+<div class="text-dark">
+  <h3 class="text-center mt-5 mb-4">Create item</h3> 
+
+  <!-- Zone du formulaire -->
+  <%= form_tag url_for(action: 'create'), method: 'post', class: "col col-4 mx-auto" do %>
+
+  <b><%= label_tag 'Title' %></b>
+  <%= text_field_tag 'title', @item.title, class: "form-control mb-3" %>
+
+
+  <b><%= label_tag 'Description' %></b>
+  <%= text_field_tag 'description', @item.description, class: "form-control mb-3" %>
+
+
+  <b><%= label_tag 'Price' %></b>
+  <%= text_field_tag 'price', @item.price, class: "form-control mb-3"  %>
+ 
+
+  <b><%= label_tag 'Image url' %></b>
+  <%= text_field_tag 'image_url', @item.image_url, placeholder: "ex: https://my_image", class: "form-control"  %>
+
+  <%= submit_tag "Create", class: "btn btn-primary col-12 mb-4 mt-3" %>
+
+  <% end %>
+</div>
+
+<% if @item.errors.any? %>
+<div class="alert alert-danger" role="alert">
+ <p>The item can't be created for the reasons below:</p>
+ <ul>
+   <% @item.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+   <% end %>
+ </ul>
+</div>
+<% end %>

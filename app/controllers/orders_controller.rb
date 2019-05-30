@@ -1,8 +1,5 @@
 class OrdersController < ApplicationController
 
-	def new		
-	end
-
 	def create
 
 		# We stock the current cart in a variable
@@ -23,8 +20,5 @@ class OrdersController < ApplicationController
 		CartItem.where(cart_id: @cart.id).each do |entry|
 			entry.destroy
 		end
-
-
-
 	end
 end
