@@ -29,5 +29,4 @@ class CartItemsController < ApplicationController
 		#We redirect to the current page
 		redirect_to cart_path(@cart)
 	end
-
 end
