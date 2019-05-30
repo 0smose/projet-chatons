@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:id])
+		@user = User.friendly.find(params[:id])
 	end
 
 	def dont_show
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		@user = User.find(params[:id])
+		@user = User.friendly.find(params[:id])
 		redirect_to root_path, notice: "You can't edit this profile !" unless current_user == @user
 	end
 

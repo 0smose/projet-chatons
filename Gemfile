@@ -67,6 +67,6 @@ gem 'faker'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'stripe'
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk-s3', require: false
 gem 'mailjet'
-
+gem 'friendly_id', '~> 5.2.4'
