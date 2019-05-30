@@ -30,3 +30,19 @@ Item.destroy_all
 	# Puts to show every time an item is added
 	puts "Item added"
 end
+
+# We create an admin
+user = User.create!(
+		email: "johnneige@yopmail.com",
+		first_name: "John",
+		last_name: "Neige",
+		password: "dumdum")
+
+puts "-----------------------------"
+puts "------- Admin created! ------"
+puts "-----------------------------"
+
+puts "Access to the admin account :"
+puts "Login: johnneige@yopmail.com"
+puts "Password: dumdum"
+puts "-----------------------------"
