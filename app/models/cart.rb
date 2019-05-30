@@ -3,6 +3,12 @@ class Cart < ApplicationRecord
 	has_many :cart_items
 	has_many :items, through: :cart_items
 
+	friendly_id :name_and_location
+
+  def name_and_location
+    "le panier de #{self.user.email}"
+  end
+
 	def total_cart_price
 		#We set a counter at 0
 		total = 0
